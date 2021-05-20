@@ -1,5 +1,5 @@
 <template>
-  <div class="data-box">
+  <div class="data-box" @click="changeColor()" :class="{ active: isActive }">
     {{ title }}
   </div>
 </template>
@@ -11,7 +11,15 @@ export default {
     title: String,
   },
   data() {
-    return {};
+    return {
+      isActive: false,
+    };
+  },
+
+  methods: {
+    changeColor() {
+      this.isActive = !this.isActive;
+    },
   },
 };
 </script>
@@ -31,6 +39,11 @@ export default {
 }
 
 .data-box:hover {
-  border-color: #099688;
+  border-color: #705eeb;
+}
+
+.active {
+  border-color: #705eeb;
+  color: #705eeb;
 }
 </style>

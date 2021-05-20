@@ -1,7 +1,7 @@
 <template>
   <div class="welcome">
     <div class="main">
-      <div class="start">
+      <div class="start bot">
         <div class="logo-main">
           <img src="./assets/logo-click.png" alt="Company Logo" />
         </div>
@@ -13,10 +13,10 @@
           more productive. This will only take a minute.
           <br />
         </p>
-        <main-button content="Let's do it!"></main-button>
+        <main-button @click="goto('div1')" content="Let's do it!"></main-button>
       </div>
 
-      <div class="step-1">
+      <div class="step-1 bot" ref="div1">
         <div class="logo-main">
           <img src="./assets/logo-click.png" alt="Company Logo" />
         </div>
@@ -30,10 +30,10 @@
         <div class="enter">
           Press enter
         </div>
-        <main-button content="Next"></main-button>
+        <main-button @click="goto('div2')" content="Next"></main-button>
       </div>
 
-      <div class="step-2">
+      <div class="step-2 bot" ref="div2">
         <div class="logo-main">
           <img src="./assets/logo-click.png" alt="Company Logo" />
         </div>
@@ -55,10 +55,13 @@
         </div>
 
         <div class="radio-buttons-workspace"></div>
-        <main-button content="I'm happy so far"></main-button>
+        <main-button
+          @click="goto('div3')"
+          content="I'm happy so far"
+        ></main-button>
       </div>
 
-      <div class="step-3">
+      <div class="step-3 bot" ref="div3">
         <div class="logo-main">
           <img src="./assets/logo-click.png" alt="Company Logo" />
         </div>
@@ -67,10 +70,13 @@
         </p>
         <br />
         <div class="radio-buttons-theme"></div>
-        <main-button content="I'm Happy so far"></main-button>
+        <main-button
+          @click="goto('div4')"
+          content="I'm Happy so far"
+        ></main-button>
       </div>
 
-      <div class="step-4">
+      <div class="step-4 bot" ref="div4">
         <div class="logo-main">
           <img src="./assets/logo-click.png" alt="Company Logo" />
         </div>
@@ -79,18 +85,18 @@
         </p>
         <br />
         <div class="choices">
-          <box title="Just me"></box>
-          <box title="6-10"></box>
-          <box title="11-25"></box>
-          <box title="26-50"></box>
-          <box title="51-200"></box>
-          <box title="201-500"></box>
-          <box title="501+"></box>
-          <box title="I don't know"></box>
+          <box @click="goto('div5')" title="Just me"></box>
+          <box @click="goto('div5')" title="6-10"></box>
+          <box @click="goto('div5')" title="11-25"></box>
+          <box @click="goto('div5')" title="26-50"></box>
+          <box @click="goto('div5')" title="51-200"></box>
+          <box @click="goto('div5')" title="201-500"></box>
+          <box @click="goto('div5')" title="501+"></box>
+          <box @click="goto('div5')" title="I don't know"></box>
         </div>
       </div>
 
-      <div class="step-5">
+      <div class="step-5 bot" ref="div5">
         <div class="logo-main">
           <img src="./assets/logo-click.png" alt="Company Logo" />
         </div>
@@ -116,8 +122,143 @@
           <box title="Other"></box>
           <box title="I don't know"></box>
         </div>
-        <main-button content="Next"></main-button>
+        <main-button @click="goto('div6')" content="Next"></main-button>
         <div class="text">Friendly note: You can select multiple options.</div>
+      </div>
+
+      <div class="step-6 bot" ref="div6">
+        <div class="logo-main">
+          <img src="./assets/logo-click.png" alt="Company Logo" />
+        </div>
+        <p class="bold-heading">
+          How did you hear about us?
+        </p>
+        <br />
+
+        <div class="choices">
+          <box
+            @click="goto('div5')"
+            title="Search Engine (Google, Bing, etc.)"
+          ></box>
+          <box @click="goto('div7')" title="Google Ads"></box>
+          <box @click="goto('div7')" title="Facebook Ads"></box>
+          <box @click="goto('div7')" title="Youtube Ads"></box>
+          <box @click="goto('div7')" title="Social Media"></box>
+          <box @click="goto('div7')" title="Email"></box>
+          <box @click="goto('div7')" title="Audio/Podcasts"></box>
+          <box @click="goto('div7')" title="TV"></box>
+          <box @click="goto('div7')" title="Newspaper"></box>
+          <box @click="goto('div7')" title="Billboard"></box>
+          <box @click="goto('div7')" title="Word of Mouth"></box>
+          <box @click="goto('div7')" title="Other"></box>
+        </div>
+        <main-button @click="goto('div7')" content="Next"></main-button>
+      </div>
+
+      <div class="step-7 bot" ref="div7">
+        <div class="logo-main">
+          <img src="./assets/logo-click.png" alt="Company Logo" />
+        </div>
+        <p class="bold-heading">
+          Invite people to your Workspace:
+        </p>
+        <br />
+        <div class="input-container">
+          <input
+            type="text"
+            placeholder="Enter email addresses (or paste multiple)"
+          />
+        </div>
+        <div class="enter">
+          Press enter
+        </div>
+        <main-button @click="goto('div8')" content="I'm done"></main-button>
+      </div>
+
+      <div class="step-8 bot" ref="div8">
+        <div class="logo-main">
+          <img src="./assets/logo-click.png" alt="Company Logo" />
+        </div>
+        <p class="bold-heading">
+          Customize how you work by enabling ClickApps
+        </p>
+        <br />
+        <div class="choices">
+          <box title="Remote onboarding"></box>
+          <box title="Project management"></box>
+          <box title="To-do's & Lists"></box>
+          <box title="Sales & CRM"></box>
+          <box title="Finance management"></box>
+          <box title="Campaign management"></box>
+          <box title="Sprints & backlogs"></box>
+          <box title="Getting things done"></box>
+          <box title="Remote work management"></box>
+          <box title="Event planningt"></box>
+          <box title="Save time"></box>
+          <box title="Replace multiple apps with one"></box>
+          <box title="Personal"></box>
+          <box title="Other"></box>
+          <box title="I don't know"></box>
+        </div>
+        <main-button @click="goto('div9')" content="Looks good"></main-button>
+        <div class="text">Friendly note: You can adjust ClickApps anytime.</div>
+      </div>
+
+      <div class="step-9 bot" ref="div9">
+        <div class="logo-main">
+          <img src="./assets/logo-click.png" alt="Company Logo" />
+        </div>
+        <p class="bold-heading">
+          Do you use any of these apps?
+        </p>
+        <br />
+        <div class="choices">
+          <!-- <i class="fab fa-slack">Slack</i> -->
+          <box title="Slack"> </box>
+          <box title="Zapier"></box>
+          <box title="Microsoft Teams"></box>
+          <box title="Zoom"></box>
+          <box title="Github"></box>
+          <box title="Gitlab"></box>
+          <box title="Bitbucket"></box>
+          <box title="Hangouts"></box>
+          <box title="Zendesk"></box>
+        </div>
+        <main-button @click="goto('div10')" content="I'm done"></main-button>
+      </div>
+
+      <div class="step-10 bot" ref="div10">
+        <div class="logo-main">
+          <img src="./assets/logo-click.png" alt="Company Logo" />
+        </div>
+        <p class="bold-heading">
+          Do you want to import tasks?
+        </p>
+        <br />
+        <div class="choices">
+          <!-- <i class="fab fa-slack">Slack</i> -->
+          <box title="Asana"> </box>
+          <box title="Basecamp"></box>
+          <box title="Trello"></box>
+          <box title="Jira"></box>
+          <box title="Wrike"></box>
+          <box title="To do list"></box>
+          <box title="Monday"></box>
+        </div>
+        <main-button @click="goto('div11')" content="I'm done"></main-button>
+      </div>
+
+      <div class="step-11 bot" ref="div11">
+        <div class="logo-main">
+          <img src="./assets/logo-click.png" alt="Company Logo" />
+        </div>
+        <p class="bold-heading">
+          That's it. Now go and change the world!
+          <br />
+          And don't forget to have fun 🙌
+        </p>
+        <br />
+        <main-button content="Play with ClickUp"></main-button>
       </div>
     </div>
 
@@ -131,6 +272,13 @@ import Box from "./components/Box.vue";
 export default {
   name: "App",
   components: { MainButton, Box },
+  methods: {
+    goto(refName) {
+      var element = this.$refs[refName];
+      var top = element.offsetTop;
+      window.scrollTo(0, top);
+    },
+  },
 };
 </script>
 
@@ -146,6 +294,10 @@ export default {
 #app {
   background-color: #fff;
   color: #000;
+}
+
+.bot {
+  margin-bottom: 130px;
 }
 
 .welcome {
@@ -168,6 +320,10 @@ export default {
   background-color: #705eeb;
 }
 /* Start */
+
+.start {
+  padding-top: 48vh;
+}
 .bold-heading {
   margin-top: 10vh;
   font-size: 1.35em;
@@ -196,9 +352,11 @@ img {
   font-weight: 300;
   font-family: "Comfortaa", cursive !important;
 }
+
 .input-container {
   border-bottom: 1px solid #705eeb;
 }
+
 .enter {
   text-align: right;
   margin-top: 10px;
@@ -215,7 +373,6 @@ img {
 /* Step-2 start */
 .avatar {
   display: flex;
-  margin-bottom: 10px;
   position: relative;
   margin-bottom: 30px;
 }
@@ -231,12 +388,14 @@ img {
   justify-content: center;
   /* position: relative; */
 }
+
 .drop {
   font-size: 12px;
   text-align: center;
   margin-top: 10px;
   line-height: 20px;
 }
+
 .sep {
   display: flex;
   flex-direction: column;
@@ -279,4 +438,10 @@ img {
 }
 
 /* Step-5 end */
+
+/* blur start */
+/* #app *:not(.active) {
+  filter: blur(3px);
+} */
+/* Blur end */
 </style>
