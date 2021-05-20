@@ -52,9 +52,20 @@
           <div class="name-avatar">
             P
           </div>
+          <div class="radio-buttons-workspace">
+            <div class="items-workspace">
+              <Circle style="background:#705eeb "></Circle>
+              <Circle style="background:blue "></Circle>
+              <Circle style="background:green "></Circle>
+              <Circle style="background:#705e "></Circle>
+              <Circle style="background:#7eeb "></Circle>
+              <Circle style="background:#765e "></Circle>
+              <Circle style="background:#755e "></Circle>
+              <Circle style="background:#301 "></Circle>
+              <Circle style="background:black"></Circle>
+            </div>
+          </div>
         </div>
-
-        <div class="radio-buttons-workspace"></div>
         <main-button
           @click="goto('div3')"
           content="I'm happy so far"
@@ -69,7 +80,17 @@
           Choose your favorite color theme:
         </p>
         <br />
-        <div class="radio-buttons-theme"></div>
+        <div class="radio-buttons-theme">
+          <Circle class="inline" style="background:#705eeb"></Circle>
+          <Circle class="inline" style="background:blue "></Circle>
+          <Circle class="inline" style="background:green "></Circle>
+          <Circle class="inline" style="background:#705e "></Circle>
+          <Circle class="inline" style="background:#7eeb "></Circle>
+          <Circle class="inline" style="background:#765e "></Circle>
+          <Circle class="inline" style="background:#755e "></Circle>
+          <Circle class="inline" style="background:#301 "></Circle>
+          <Circle class="inline" style="background:black"></Circle>
+        </div>
         <main-button
           @click="goto('div4')"
           content="I'm Happy so far"
@@ -269,9 +290,10 @@
 <script>
 import MainButton from "./components/MainButton";
 import Box from "./components/Box.vue";
+import Circle from "./components/Circle";
 export default {
   name: "App",
-  components: { MainButton, Box },
+  components: { MainButton, Box, Circle },
   methods: {
     goto(refName) {
       var element = this.$refs[refName];
@@ -418,7 +440,33 @@ img {
   color: #fff;
   font-size: 3em;
 }
+
+.radio-buttons-workspace {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 377px;
+  padding-left: 50px;
+  justify-content: center;
+}
+
+.items-workspace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
 /* Step -2 end */
+
+/* Step -3 start*/
+
+.inline {
+  display: inline-flex !important;
+}
+
+/* step3 end */
 
 /* Step-4 start */
 .choices {
