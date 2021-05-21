@@ -15,7 +15,6 @@ export default {
   height: 35px;
   border-radius: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease-out;

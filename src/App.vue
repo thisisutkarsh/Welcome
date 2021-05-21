@@ -52,19 +52,18 @@
           <div class="name-avatar">
             P
           </div>
-          <div class="radio-buttons-workspace">
-            <div class="items-workspace">
-              <Circle style="background:#705eeb "></Circle>
-              <Circle style="background:blue "></Circle>
-              <Circle style="background:green "></Circle>
-              <Circle style="background:#705e "></Circle>
-              <Circle style="background:#7eeb "></Circle>
-              <Circle style="background:#765e "></Circle>
-              <Circle style="background:#755e "></Circle>
-              <Circle style="background:#301 "></Circle>
-              <Circle style="background:black"></Circle>
-            </div>
-          </div>
+        </div>
+
+        <div class="radio-buttons-theme">
+          <Circle class="inline" style="background:#705eeb"></Circle>
+          <Circle class="inline" style="background:blue "></Circle>
+          <Circle class="inline" style="background:green "></Circle>
+          <Circle class="inline" style="background:#705e "></Circle>
+          <Circle class="inline" style="background:#7eeb "></Circle>
+          <Circle class="inline" style="background:#765e "></Circle>
+          <Circle class="inline" style="background:#755e "></Circle>
+          <Circle class="inline" style="background:#301 "></Circle>
+          <Circle class="inline" style="background:black"></Circle>
         </div>
         <main-button
           @click="goto('div3')"
@@ -324,7 +323,7 @@ export default {
 
 .welcome {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 20%;
   grid-template-rows: 1fr;
   grid-template-areas: "main side";
   height: 100%;
@@ -445,7 +444,7 @@ img {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  width: 377px;
+  width: 31vw;
   padding-left: 50px;
   justify-content: center;
 }
@@ -492,4 +491,22 @@ img {
   filter: blur(3px);
 } */
 /* Blur end */
+
+@media (max-width: 768px) {
+  .welcome {
+    display: block;
+    border: none;
+    overflow: hidden;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .name-avatar {
+    width: 105px;
+    height: 105px;
+  }
+  .image-drop {
+    width: 105px;
+    height: 105px;
+  }
+}
 </style>
