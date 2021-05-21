@@ -318,7 +318,7 @@ export default {
 }
 
 .bot {
-  margin-bottom: 130px;
+  margin-bottom: 40vh;
 }
 
 .welcome {
@@ -345,8 +345,9 @@ export default {
 .start {
   margin-top: 48vh;
 }
+
 .bold-heading {
-  margin-top: 10vh;
+  /* margin-top: 45vh; */
   font-size: 1.35em;
   line-height: 1.4em;
   padding: 15px;
@@ -507,6 +508,12 @@ img {
   .image-drop {
     width: 105px;
     height: 105px;
+  }
+  img {
+    margin-left: -18vw;
+  }
+  .bot {
+    padding-left: 2vw;
   }
 }
 </style>
