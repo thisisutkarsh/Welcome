@@ -343,7 +343,7 @@ export default {
 /* Start */
 
 .start {
-  padding-top: 48vh;
+  margin-top: 48vh;
 }
 .bold-heading {
   margin-top: 10vh;
