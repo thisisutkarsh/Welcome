@@ -52,18 +52,20 @@
           <div class="name-avatar">
             P
           </div>
-        </div>
 
-        <div class="radio-buttons-theme">
-          <Circle class="inline" style="background:#705eeb"></Circle>
-          <Circle class="inline" style="background:blue "></Circle>
-          <Circle class="inline" style="background:green "></Circle>
-          <Circle class="inline" style="background:#705e "></Circle>
-          <Circle class="inline" style="background:#7eeb "></Circle>
-          <Circle class="inline" style="background:#765e "></Circle>
-          <Circle class="inline" style="background:#755e "></Circle>
-          <Circle class="inline" style="background:#301 "></Circle>
-          <Circle class="inline" style="background:black"></Circle>
+          <div class="radio-buttons-workspace">
+            <div class="items-workspace">
+              <Circle style="background:#705eeb"></Circle>
+              <Circle style="background:blue "></Circle>
+              <Circle style="background:green "></Circle>
+              <Circle style="background:#705e "></Circle>
+              <Circle style="background:#7eeb "></Circle>
+              <Circle style="background:#765e "></Circle>
+              <Circle style="background:#755e "></Circle>
+              <Circle style="background:#301 "></Circle>
+              <!-- <Circle style="background:black"></Circle> -->
+            </div>
+          </div>
         </div>
         <main-button
           @click="goto('div3')"
@@ -88,7 +90,6 @@
           <Circle class="inline" style="background:#765e "></Circle>
           <Circle class="inline" style="background:#755e "></Circle>
           <Circle class="inline" style="background:#301 "></Circle>
-          <Circle class="inline" style="background:black"></Circle>
         </div>
         <main-button
           @click="goto('div4')"
@@ -354,9 +355,9 @@ export default {
   padding-left: 0;
 }
 img {
-  height: 9vh;
+  height: 58px;
   float: left;
-  margin-left: -7vw;
+  margin-left: -90px;
   margin-top: 10px;
 }
 
@@ -370,7 +371,7 @@ img {
   display: block;
   border: 0;
   outline: none;
-  font-size: 2em;
+  font-size: 2.8vw;
   font-weight: 300;
   font-family: "Comfortaa", cursive !important;
 }
@@ -397,6 +398,8 @@ img {
   display: flex;
   position: relative;
   margin-bottom: 30px;
+  align-items: center;
+  flex: 1 1 0;
 }
 
 .image-drop {
@@ -445,7 +448,7 @@ img {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  width: 31vw;
+  width: 33vw;
   padding-left: 50px;
   justify-content: center;
 }
@@ -493,7 +496,7 @@ img {
 } */
 /* Blur end */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .welcome {
     display: block;
     border: none;
@@ -510,10 +513,38 @@ img {
     height: 105px;
   }
   img {
-    margin-left: -18vw;
+    height: 7vh;
+    margin-left: -61px;
   }
   .bot {
     padding-left: 2vw;
+  }
+  .radio-buttons-workspace {
+    width: 70vw;
+    padding-left: 0;
+  }
+  .avatar {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .name-avatar {
+    width: 70px;
+    height: 70px;
+  }
+  .image-drop {
+    width: 70px;
+    height: 70px;
+  }
+  .drop {
+    font-size: 7px;
+  }
+  .sep {
+    font-size: small;
+  }
+  .name-avatar {
+    font-size: 2em;
   }
 }
 </style>
